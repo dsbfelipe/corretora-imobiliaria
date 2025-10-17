@@ -14,7 +14,12 @@ public class ListaDeImoveis {
     imoveis.add(imovel);
   }
 
-  public List<Imovel> getImoveis() {
+  public List<Imovel> listar() {
     return new ArrayList<>(imoveis);
   }
+
+  public List<Imovel> listarAlugados() {
+    return imoveis.stream().filter(imovel -> imovel.isAlugado()).toList();
+  }
 }
+

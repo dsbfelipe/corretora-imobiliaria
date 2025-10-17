@@ -4,7 +4,7 @@ public abstract class Imovel {
   protected String endereco;
   protected String numero;
   protected boolean alugado;
-  private Proprietario proprietario;
+  protected Proprietario proprietario;
 
   public Imovel(String endereco, String numero, Proprietario proprietario) {
     this.endereco = endereco;
@@ -13,6 +13,11 @@ public abstract class Imovel {
     this.alugado = false;
   }
 
+  public boolean isAlugado() {
+    return alugado;
+  }
+
+  public String getNumero() { return numero; }
   public void setAlugado(boolean bool) { this.alugado = bool; }
   public abstract String estaAlugado();
   public String contatoProprietario() { return proprietario.getTelefone(); }
@@ -31,3 +36,4 @@ public abstract class Imovel {
     return Math.min(anosDeContrato * 0.01, 0.15);
   }
 }
+

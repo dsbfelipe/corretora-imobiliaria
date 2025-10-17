@@ -10,3 +10,4 @@ public class Casa extends Imovel {
     return this.alugado ? "A casa está alugada" : "A casa está disponível";
   }
 }
+

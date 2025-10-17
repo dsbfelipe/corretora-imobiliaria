@@ -18,3 +18,4 @@ public class Proprietario {
   public String getTelefone() { return telefone; }
   public String getCpf() { return cpf; }
 }
+
