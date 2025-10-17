@@ -6,11 +6,16 @@ public abstract class Imovel {
   protected boolean alugado;
   private Proprietario proprietario;
 
-  public abstract boolean estaAlugado();
-
-  public String contatoProprietario() {
-    return proprietario.getTelefone();
+  public Imovel(String endereco, String numero, Proprietario proprietario) {
+    this.endereco = endereco;
+    this.numero = numero;
+    this.proprietario = proprietario;
+    this.alugado = false;
   }
+
+  public void setAlugado(boolean bool) { this.alugado = bool; }
+  public abstract String estaAlugado();
+  public String contatoProprietario() { return proprietario.getTelefone(); }
 
   public Integer calcularAluguel(int valorBase, int mesesContrato) {
     double desconto = calcularDesconto(mesesContrato);
