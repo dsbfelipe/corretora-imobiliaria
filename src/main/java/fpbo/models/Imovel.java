@@ -13,13 +13,12 @@ public abstract class Imovel {
     this.alugado = false;
   }
 
-  public boolean isAlugado() {
-    return alugado;
-  }
-
+  public boolean isAlugado() { return alugado; }
   public String getNumero() { return numero; }
   public void setAlugado(boolean bool) { this.alugado = bool; }
+
   public abstract String estaAlugado();
+
   public String contatoProprietario() { return proprietario.getTelefone(); }
 
   public Integer calcularAluguel(int valorBase, int mesesContrato) {

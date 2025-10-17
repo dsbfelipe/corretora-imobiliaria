@@ -21,5 +21,9 @@ public class ListaDeImoveis {
   public List<Imovel> listarAlugados() {
     return imoveis.stream().filter(imovel -> imovel.isAlugado()).toList();
   }
+
+  public List<Imovel> listarDisponiveis() {
+    return imoveis.stream().filter(imovel -> !imovel.isAlugado()).toList();
+  }
 }
 
