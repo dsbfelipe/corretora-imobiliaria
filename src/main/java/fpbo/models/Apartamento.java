@@ -1,8 +1,8 @@
 package fpbo.models;
 
 public class Apartamento extends Imovel {
-  public Apartamento(String endereco, String numero, Proprietario proprietario) {
-    super(endereco, numero, proprietario);
+  public Apartamento(String endereco, String numero, int valorBase, Proprietario proprietario) {
+    super(endereco, numero, valorBase, proprietario);
   }
 
   @Override

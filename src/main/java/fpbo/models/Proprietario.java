@@ -11,6 +11,11 @@ public class Proprietario {
     this.cpf = cpf;
   }
 
+  @Override
+  public String toString() {
+    return nome;
+  }
+
   public String getNome() { return nome; }
   public String getTelefone() { return telefone; }
   public String getCpf() { return cpf; }

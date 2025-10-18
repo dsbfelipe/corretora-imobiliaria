@@ -14,4 +14,9 @@ public class Impressora {
     System.out.print(mensagem + ": ");
     return Integer.parseInt(scanner.nextLine());
   }
+
+  public static void pausar() {
+    System.out.println("Pressione Enter para continuar...");
+    scanner.nextLine();
+  }
 }

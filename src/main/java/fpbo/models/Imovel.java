@@ -5,10 +5,12 @@ public abstract class Imovel {
   protected String numero;
   protected boolean alugado;
   protected Proprietario proprietario;
+  protected int valorBase;
 
-  public Imovel(String endereco, String numero, Proprietario proprietario) {
+  public Imovel(String endereco, String numero, int valorBase, Proprietario proprietario) {
     this.endereco = endereco;
     this.numero = numero;
+    this.valorBase = valorBase;
     this.proprietario = proprietario;
     this.alugado = false;
   }
@@ -21,9 +23,9 @@ public abstract class Imovel {
 
   public String contatoProprietario() { return proprietario.getTelefone(); }
 
-  public Integer calcularAluguel(int valorBase, int mesesContrato) {
+  public Integer calcularAluguel(int mesesContrato) {
     double desconto = calcularDesconto(mesesContrato);
-    double valorFinal = valorBase * (1 - desconto);
+    double valorFinal = this.valorBase * (1 - desconto);
 
     return (int) Math.round(valorFinal);
   }
@@ -33,6 +35,17 @@ public abstract class Imovel {
 
     int anosDeContrato = mesesDeContrato / 12;
     return Math.min(anosDeContrato * 0.01, 0.15);
+  }
+
+  @Override
+  public String toString() {
+    return
+            "Endereco: " + endereco + " | " +
+            "Número: " + numero + " | " +
+            "Disponível: " + (alugado ? "Não" : "Sim") + " | " +
+            "Proprietario: " + proprietario + " | " +
+            "Preço: " + valorBase
+            ;
   }
 }
 
